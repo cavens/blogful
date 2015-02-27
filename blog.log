@@ -27,3 +27,12 @@ INFO:werkzeug: * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
 INFO:werkzeug: * Restarting with stat
 INFO:werkzeug:192.168.224.1 - - [26/Feb/2015 23:56:38] "GET / HTTP/1.1" 200 -
 INFO:werkzeug:192.168.224.1 - - [26/Feb/2015 23:56:38] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.224.1 - - [27/Feb/2015 09:29:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [27/Feb/2015 09:30:26] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [27/Feb/2015 09:30:26] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [27/Feb/2015 09:30:39] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [27/Feb/2015 09:30:39] "GET /static/css/main.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [27/Feb/2015 09:30:40] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [27/Feb/2015 09:30:40] "GET /static/css/main.css HTTP/1.1" 304 -
