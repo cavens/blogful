@@ -46,3 +46,6 @@ INFO:werkzeug: * Restarting with stat
 INFO:werkzeug: * Detected change in '/home/action/thinkful/projects/blog/manage.py', reloading
 INFO:werkzeug: * Restarting with stat
 INFO:werkzeug:192.168.224.1 - - [27/Feb/2015 10:53:00] "GET / HTTP/1.1" 404 -
+INFO:werkzeug: * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.224.1 - - [27/Feb/2015 10:55:07] "GET / HTTP/1.1" 404 -
