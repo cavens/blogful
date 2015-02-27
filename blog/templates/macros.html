@@ -7,9 +7,19 @@
             </li>
         </ul>
     </div>
+    <div class="col-md-2 text-right metadata">
+        <ul class="list-unstyled">
+            <li>
+              <a href="{{ url_for('edit_get', id=post.id) }}">&larr; Edit</a>
+            </li>
+                      <li>
+              <a href="{{ url_for('del_post_step1', id=post.id) }}">&larr; Delete</a>
+            </li>
+        </ul>
+    </div>
     <div class="col-md-10">
         <h1>
-            {{ post.title }}
+              <a href="{{ url_for('add_post_details', id=post.id) }}">&larr; {{ post.title }}</a>
         </h1>
         {{ post.content | safe }}
     </div>

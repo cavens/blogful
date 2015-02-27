@@ -46,12 +46,45 @@ def add_post_post():
   title = request.form["title"],
   content = mistune.markdown(request.form["content"])
   )
-  logging.debug("Before post")
   session.add(post)
-  logging.debug("Before commit")
   session.commit()
-  logging.debug("Before return")
   return redirect(url_for("posts"))
+  
+@app.route("/post/<id>")
+def add_post_details(id):
+  post = session.query(Post).filter(Post.id == id).first()
+  return render_template("details.html", post = post)
+  
+@app.route("/post/<id>/edit", methods=["GET"])
+def edit_get(id):
+  post = session.query(Post).filter(Post.id == id).first()
+  return render_template("edit.html", post = post)
+  
+@app.route("/post/<id>/edit", methods=["POST"])
+def edit_post(id):
+  new_title = request.form["title"]
+  new_content = mistune.markdown(request.form["content"])
+
+  session.query(Post).filter(Post.id == id).update({"title": (new_title)})
+  session.query(Post).filter(Post.id == id).update({"content": (new_content)})
+
+  session.commit()
+  return redirect(url_for("posts"))
+  
+  
+@app.route("/post/<id>/delete")
+def del_post_step1(id):
+  post = session.query(Post).filter(Post.id == id).first()
+  logging.debug("This is postid {}".format(post))
+  return render_template("delete_confirm.html", post = post)
+  
+@app.route("/post/<id>/delete/confirm")  
+def del_post_step2(id):
+  post = session.query(Post).filter(Post.id == id).first()
+  session.delete(post)
+  session.commit
+  return redirect(url_for("posts"))
+  
   
   
   

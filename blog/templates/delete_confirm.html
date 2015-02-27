@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1> Sure you want to delete  {{ post.title }} </h1>
+
+<div class="col-md-2 text-right metadata">
+        <ul class="list-unstyled">
+            <li>
+              <a href="{{ url_for('del_post_step2', id=post.id) }}">&larr; YES</a>
+            </li>
+                      <li>
+              <a href="{{ url_for('posts') }}">&larr; NO</a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock %}
