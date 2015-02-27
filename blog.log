@@ -1,0 +1,29 @@
+DEBUG:root:0
+DEBUG:root:1
+DEBUG:root:2
+DEBUG:root:3
+DEBUG:root:4
+DEBUG:root:5
+DEBUG:root:6
+DEBUG:root:7
+DEBUG:root:8
+DEBUG:root:9
+DEBUG:root:10
+DEBUG:root:11
+DEBUG:root:12
+DEBUG:root:13
+DEBUG:root:14
+DEBUG:root:15
+DEBUG:root:16
+DEBUG:root:17
+DEBUG:root:18
+DEBUG:root:19
+DEBUG:root:20
+DEBUG:root:21
+DEBUG:root:22
+DEBUG:root:23
+DEBUG:root:24
+INFO:werkzeug: * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.224.1 - - [26/Feb/2015 23:56:38] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [26/Feb/2015 23:56:38] "GET /static/css/main.css HTTP/1.1" 200 -
