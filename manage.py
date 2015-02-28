@@ -31,7 +31,7 @@ def seed():
 def adduser():
   name = raw_input("Name:")
   email = raw_input("Email:")
-  if session.query(User).filter(User.email = email).first():
+  if session.query(User).filter_by(email=email).first():
     print "User with that email address already exists"
     return
   
@@ -43,9 +43,6 @@ def adduser():
   user = User(name=name,email=email,password=generate_password_hash(password))
   session.add(user) 
   session.commit()
-  
-  
-  
   
 if __name__ == "__main__":
   manager.run()

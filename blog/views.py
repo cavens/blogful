@@ -9,6 +9,11 @@ from blog import app
 from .database import session
 from .models import Post
 
+from flask import flash
+from flask.ext.login import login_user, login_required
+from werkzeug.security import check_password_hash
+from .models import User
+
 
 @app.route("/")
 @app.route("/page/<int:page>")
@@ -37,10 +42,12 @@ def posts(page=1, paginate_by=10):
 
 
 @app.route("/post/add", methods=["GET"])
+@login_required
 def add_post_get():
   return render_template("add_post.html")
   
 @app.route("/post/add", methods=["POST"])
+@login_required
 def add_post_post():
   post = Post(
   title = request.form["title"],
@@ -51,16 +58,19 @@ def add_post_post():
   return redirect(url_for("posts"))
   
 @app.route("/post/<id>")
+@login_required
 def add_post_details(id):
   post = session.query(Post).filter(Post.id == id).first()
   return render_template("details.html", post = post)
   
 @app.route("/post/<id>/edit", methods=["GET"])
+@login_required
 def edit_get(id):
   post = session.query(Post).filter(Post.id == id).first()
   return render_template("edit.html", post = post)
   
 @app.route("/post/<id>/edit", methods=["POST"])
+@login_required
 def edit_post(id):
   new_title = request.form["title"]
   new_content = mistune.markdown(request.form["content"])
@@ -73,12 +83,14 @@ def edit_post(id):
   
   
 @app.route("/post/<id>/delete")
+@login_required
 def del_post_step1(id):
   post = session.query(Post).filter(Post.id == id).first()
   logging.debug("This is postid {}".format(post))
   return render_template("delete_confirm.html", post = post)
   
 @app.route("/post/<id>/delete/confirm")  
+@login_required
 def del_post_step2(id):
   post = session.query(Post).filter(Post.id == id).first()
   session.delete(post)
@@ -86,6 +98,25 @@ def del_post_step2(id):
   return redirect(url_for("posts"))
   
   
+@app.route("/login", methods=["GET"])
+def login_get():
+  return render_template("login.html")
+
+@app.route("/login", methods=["POST"])
+def login_post():
+  email = request.form["email"]
+  password = request.form["password"]
+  user = session.query(User).filter_by(email=email).first()
+  if not user or not check_password_hash(user.password, password):
+    logging.debug("in if")
+    flash("Incorrect username or password","danger")
+    return redirect (url_for("login_get"))
+  
+  login_user(user)
+  return redirect(request.args.get('next') or url_for("posts"))
+
+
+
   
   
   
