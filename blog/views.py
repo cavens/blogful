@@ -10,7 +10,7 @@ from .database import session
 from .models import Post
 
 from flask import flash
-from flask.ext.login import login_user, login_required
+from flask.ext.login import login_user, login_required, current_user, logout_user
 from werkzeug.security import check_password_hash
 from .models import User
 
@@ -51,7 +51,8 @@ def add_post_get():
 def add_post_post():
   post = Post(
   title = request.form["title"],
-  content = mistune.markdown(request.form["content"])
+  content = mistune.markdown(request.form["content"]),
+  author = current_user
   )
   session.add(post)
   session.commit()
@@ -115,7 +116,10 @@ def login_post():
   login_user(user)
   return redirect(request.args.get('next') or url_for("posts"))
 
-
+@app.route("/logout")
+def logout():
+  logout_user()
+  return redirect (url_for("posts"))
 
   
   

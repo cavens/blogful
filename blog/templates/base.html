@@ -38,6 +38,28 @@
                 </div>
             </div>
         </div>
+
+{% if not current_user.is_authenticated() %}
+    <div class="col-md-2 text-right metadata">
+        <ul class="list-unstyled">
+
+          <li>
+              <a href="{{ url_for('login_get') }}">&larr; Login</a>
+            </li>
+        </ul>
+    </div>
+{% else %}
+    <div class="col-md-2 text-right metadata">
+        <ul class="list-unstyled">
+
+          <li>
+              <a href="{{ url_for('logout') }}">&larr; Logout</a>
+            </li>
+        </ul>
+    </div>      
+{% endif %}
+       
+      
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
 {% for category, message in messages %}

@@ -1,4 +1,4 @@
-{% macro render_post(post) %}
+{% macro render_post(post, current_user) %}
 <div class="row">
     <div class="col-md-2 text-right metadata">
         <ul class="list-unstyled">
@@ -7,17 +7,23 @@
             </li>
         </ul>
     </div>
-    <div class="col-md-2 text-right metadata">
+  <p> {{ current_user.name }} </p>
+{% if current_user == post.author %}
+  <div class="col-md-2 text-right metadata">
         <ul class="list-unstyled">
             <li>
               <a href="{{ url_for('edit_get', id=post.id) }}">&larr; Edit</a>
             </li>
-                      <li>
+            <li>
               <a href="{{ url_for('del_post_step1', id=post.id) }}">&larr; Delete</a>
+            </li>
+            <li>
+              <p>By {{ post.author.name }}</p>
             </li>
         </ul>
     </div>
     <div class="col-md-10">
+{% endif %}      
         <h1>
               <a href="{{ url_for('add_post_details', id=post.id) }}">&larr; {{ post.title }}</a>
         </h1>
