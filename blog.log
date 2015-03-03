@@ -1369,3 +1369,38 @@ DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
 INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 DEBUG:selenium.webdriver.remote.remote_connection:DELETE http://127.0.0.1:42580/wd/hub/session/b49aaa00-c0eb-11e4-9332-abdbc2cf9607 {"sessionId": "b49aaa00-c0eb-11e4-9332-abdbc2cf9607"}
 DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+ERROR:blog:Exception on /post/1 [GET]
+Traceback (most recent call last):
+  File "/home/action/thinkful/projects/blog/env/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/action/thinkful/projects/blog/env/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/action/thinkful/projects/blog/env/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/action/thinkful/projects/blog/env/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/action/thinkful/projects/blog/env/local/lib/python2.7/site-packages/flask/app.py", line 1461, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/action/thinkful/projects/blog/env/local/lib/python2.7/site-packages/flask_login.py", line 758, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/action/thinkful/projects/blog/blog/views.py", line 65, in add_post_details
+    return render_template("details.html", post = post)
+  File "/home/action/thinkful/projects/blog/env/local/lib/python2.7/site-packages/flask/templating.py", line 128, in render_template
+    context, ctx.app)
+  File "/home/action/thinkful/projects/blog/env/local/lib/python2.7/site-packages/flask/templating.py", line 110, in _render
+    rv = template.render(context)
+  File "/home/action/thinkful/projects/blog/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 969, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/action/thinkful/projects/blog/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 742, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/action/thinkful/projects/blog/blog/templates/details.html", line 2, in top-level template code
+    {% extends "base.html" %}
+  File "/home/action/thinkful/projects/blog/blog/templates/base.html", line 73, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/action/thinkful/projects/blog/blog/templates/details.html", line 4, in block "content"
+    {{ macros.render_post(post)}}
+  File "/home/action/thinkful/projects/blog/blog/templates/macros.html", line 20, in template
+    <p>By {{ post.author.name }}</p>
+  File "/home/action/thinkful/projects/blog/env/local/lib/python2.7/site-packages/jinja2/environment.py", line 397, in getattr
+    return getattr(obj, attribute)
+UndefinedError: 'None' has no attribute 'author'
