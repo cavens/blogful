@@ -1331,3 +1331,41 @@ INFO:werkzeug:192.168.224.1 - - [28/Feb/2015 20:55:06] "GET / HTTP/1.1" 200 -
 INFO:werkzeug:192.168.224.1 - - [28/Feb/2015 20:55:06] "GET /static/css/main.css HTTP/1.1" 304 -
 INFO:werkzeug:192.168.224.1 - - [28/Feb/2015 20:56:56] "GET / HTTP/1.1" 200 -
 INFO:werkzeug:192.168.224.1 - - [28/Feb/2015 20:56:57] "GET /static/css/main.css HTTP/1.1" 304 -
+INFO:werkzeug: * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:54633/wd/hub/session {"desiredCapabilities": {"phantomjs.page.settings.loadImages": true, "platform": "ANY", "browserName": "phantomjs", "version": "", "javascriptEnabled": true}}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+DEBUG:selenium.webdriver.remote.remote_connection:DELETE http://127.0.0.1:54633/wd/hub/session/f62a8720-c0ea-11e4-ba9e-dd534a034243 {"sessionId": "f62a8720-c0ea-11e4-ba9e-dd534a034243"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:47777/wd/hub/session {"desiredCapabilities": {"phantomjs.page.settings.loadImages": true, "platform": "ANY", "browserName": "phantomjs", "version": "", "javascriptEnabled": true}}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+DEBUG:selenium.webdriver.remote.remote_connection:DELETE http://127.0.0.1:47777/wd/hub/session/f7750880-c0ea-11e4-b7e9-85f9977b8a0a {"sessionId": "f7750880-c0ea-11e4-b7e9-85f9977b8a0a"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+INFO:werkzeug: * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:14] "GET / HTTP/1.1" 500 -
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:14] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:14] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:14] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:14] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:14] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:14] "GET /?__debugger__=yes&cmd=resource&f=source.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:15] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:15] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:15] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:8080/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:41] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.224.1 - - [02/Mar/2015 14:51:41] "GET /static/css/main.css HTTP/1.1" 304 -
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:48273/wd/hub/session {"desiredCapabilities": {"phantomjs.page.settings.loadImages": true, "platform": "ANY", "browserName": "phantomjs", "version": "", "javascriptEnabled": true}}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+DEBUG:selenium.webdriver.remote.remote_connection:DELETE http://127.0.0.1:48273/wd/hub/session/b3599e80-c0eb-11e4-9edb-c55df8f18900 {"sessionId": "b3599e80-c0eb-11e4-9edb-c55df8f18900"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:42580/wd/hub/session {"desiredCapabilities": {"phantomjs.page.settings.loadImages": true, "platform": "ANY", "browserName": "phantomjs", "version": "", "javascriptEnabled": true}}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+DEBUG:selenium.webdriver.remote.remote_connection:DELETE http://127.0.0.1:42580/wd/hub/session/b49aaa00-c0eb-11e4-9332-abdbc2cf9607 {"sessionId": "b49aaa00-c0eb-11e4-9332-abdbc2cf9607"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
